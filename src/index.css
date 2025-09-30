@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GreenStep Nature-Inspired Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Nature-inspired color palette */
+    --background: 120 20% 98%;
+    --foreground: 140 15% 15%;
+    
+    /* Forest green primary palette */
+    --primary: 140 60% 25%;
+    --primary-foreground: 120 20% 98%;
+    --primary-light: 140 45% 35%;
+    --primary-dark: 140 70% 20%;
+    
+    /* Earth brown secondary palette */
+    --secondary: 30 25% 85%;
+    --secondary-foreground: 30 60% 25%;
+    --earth-brown: 30 60% 25%;
+    --earth-brown-light: 30 40% 40%;
+    
+    /* Nature accent colors */
+    --accent: 80 60% 50%;
+    --accent-foreground: 140 15% 15%;
+    --nature-green: 100 40% 60%;
+    --sage-green: 120 20% 70%;
+    
+    /* UI colors */
+    --card: 120 30% 96%;
+    --card-foreground: 140 15% 15%;
+    --muted: 120 15% 90%;
+    --muted-foreground: 140 10% 45%;
+    --border: 120 20% 85%;
+    --input: 120 20% 90%;
+    --ring: 140 60% 25%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Nature gradients */
+    --gradient-forest: linear-gradient(135deg, hsl(140 60% 25%), hsl(140 45% 35%));
+    --gradient-earth: linear-gradient(135deg, hsl(30 60% 25%), hsl(30 40% 40%));
+    --gradient-nature: linear-gradient(135deg, hsl(120 20% 98%), hsl(120 30% 96%));
+    --gradient-hero: linear-gradient(135deg, hsl(140 60% 25%) 0%, hsl(140 45% 35%) 50%, hsl(100 40% 60%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsla(140, 60%, 25%, 0.1);
+    --shadow-nature: 0 4px 16px hsla(140, 60%, 25%, 0.15);
+    --shadow-earth: 0 6px 24px hsla(30, 60%, 25%, 0.2);
+    
+    /* Border radius */
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 16px;
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .btn-hero {
+    @apply bg-primary hover:bg-primary-light text-primary-foreground px-8 py-4 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+    background: var(--gradient-forest);
+  }
+  
+  .btn-earth {
+    @apply bg-earth-brown hover:bg-earth-brown-light text-white px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    background: var(--gradient-earth);
+  }
+  
+  .card-nature {
+    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-lg;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .card-nature:hover {
+    box-shadow: var(--shadow-nature);
+    transform: translateY(-2px);
+  }
+  
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .text-gradient {
+    background: var(--gradient-forest);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
